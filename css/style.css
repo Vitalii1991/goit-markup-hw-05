@@ -58,6 +58,10 @@ body {
   padding-top: 120px;
   padding-bottom: 120px;
 }
+img {
+  display: block;
+  margin: 0;
+}
 
 /* ----- Top Line ----- */
 
@@ -231,9 +235,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.occupation-item img {
-  display: block;
-}
 
 /* ----- Team ----- */
 
@@ -261,9 +262,6 @@ body {
 }
 .team-item .description {
   padding: 32px 16px;
-}
-.team img {
-  display: block;
 }
 .team-title-name {
   margin-top: 0;
@@ -435,9 +433,6 @@ body {
 .projects-link {
   color: var(--title-text-color);
 }
-.projects-link > img {
-  display: block;
-}
 .projects-title {
   margin-top: 0;
   margin-bottom: 8px;
@@ -447,4 +442,34 @@ body {
   margin-bottom: 0;
 
   color: var(--primary-text-color);
+}
+.card-discription {
+  position: relative;
+}
+.card-discription::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--accent-color);
+  opacity: 0;
+}
+.projects-card-item:is(:hover, :focus) ::before {
+  opacity: 1;
+}
+.text-hover {
+  max-width: 296px;
+  margin: 0;
+  position: absolute;
+  top: 40px;
+  left: 32px;
+  opacity: 0;
+
+  color: #F4F4FD;
+}
+.projects-card-item:is(:hover, :focus) .text-hover {
+  opacity: 1;
 }
