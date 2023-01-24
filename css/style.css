@@ -447,29 +447,28 @@ img {
   position: relative;
 }
 .card-discription::before {
-  content: "";
-  display: inline-block;
   position: absolute;
 
+  content: "";
+  display: inline-block;
   width: 100%;
   height: 100%;
-
-  background-color: var(--accent-color);
   opacity: 0;
+  
+  background-color: var(--accent-color);
 }
-.projects-card-item:is(:hover, :focus) ::before {
+.projects-card-item:is(:hover, :focus) ::before,
+.projects-card-item:is(:hover, :focus) .text-hover {
   opacity: 1;
 }
 .text-hover {
-  max-width: 296px;
-  margin: 0;
   position: absolute;
   top: 40px;
   left: 32px;
+  
+  max-width: 296px;
+  margin: 0;
   opacity: 0;
 
   color: #F4F4FD;
-}
-.projects-card-item:is(:hover, :focus) .text-hover {
-  opacity: 1;
 }
