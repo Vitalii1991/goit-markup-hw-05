@@ -191,7 +191,7 @@ img {
 
 /* ----- Modal window ----- */
 
-.overlay-modal {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -201,7 +201,7 @@ img {
 
   background-color: rgba(46, 47, 66, 0.4);
 }
-.overlay-modal.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
