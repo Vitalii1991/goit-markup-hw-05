@@ -59,7 +59,12 @@
       <section class="hero">
         <div class="overlay">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button type="button" class="hero-btn btn">Order Service</button>
+          <button type="button" class="hero-btn btn" data-open-modal>Order Service</button>
+        </div>
+        <div class="overlay-modal is-hidden" overlay-modal>
+          <div class="modal">
+            <button class="btn-close btn" data-close-modal></button>
+          </div>
         </div>
       </section>
       <!-- Features -->
@@ -408,5 +413,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      const refs = {
+          openModalBtn: document.querySelector("[data-open-modal]"),
+          closeModalBtn: document.querySelector("[data-close-modal]"),
+          overlay: document.querySelector("[overlay-modal]")
+      };
+  
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+      refs.overlay.addEventListener("click", logOverlayClick);
+  
+      function toggleModal() {
+          refs.overlay.classList.toggle("is-hidden");
+      }
+  
+      function logOverlayClick() {
+          console.log("Это клик в оверлей");
+      }
+  </script>
   </body>
 </html> 
